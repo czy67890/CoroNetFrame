@@ -1,0 +1,5 @@
+add_subdirectory(Util)
+add_subdirectory(SocksApi)
+add_subdirectory(NetFrame)
+add_executable(server main.cc)
+target_link_libraries(server UtilLib SocksApiLib NetFrameLib)
