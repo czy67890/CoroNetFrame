@@ -2,12 +2,17 @@
 #include <chrono>
 #include "src/Util/TimeStamp.h"
 #include <string>
-using namespace std;
+#include "src/Util/Mutex.h"
+#include "src/Util/FileUnit.h"
+#include <sys/time.h>
+#include "src/Util/TimeCounter.h"
+int times = 200000000;
+
 using namespace CUtil;
 int main(){
-	TimeStamp stp = TimeStamp::Now();
-	stp.addHours(1);
-	std::string res = stp.toString();
-	cout << res.size();
+	LogFile file("testproc");
+	for(int i = 0;i < 30;++i){
+		file.append("i be out",9);
+	}
 	return 0;
 }

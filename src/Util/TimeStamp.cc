@@ -18,7 +18,7 @@ CUtil::TimeStamp CUtil::TimeStamp::Now()
 
 CUtil::TimeStamp CUtil::TimeStamp::operator=(const TimeStamp& rhs)
 {
-	return TimeStamp();
+	tPoint_ = rhs.tPoint_;
 }
 
 std::string CUtil::TimeStamp::toStringOnlySecond()
@@ -29,6 +29,11 @@ std::string CUtil::TimeStamp::toStringOnlySecond()
 	res.resize(20);
 	std::strftime( &res[0],20,"%Y-%m-%d %H:%M:%S",local_time);
 	return res;
+}
+
+std::string CUtil::TimeStamp::toStringMiliSecond()
+{
+	return std::string();
 }
 
 std::string CUtil::TimeStamp::toStringMicrioSecond()

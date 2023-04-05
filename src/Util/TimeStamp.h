@@ -16,6 +16,8 @@ namespace CUtil{
 		TimeStamp operator=(const TimeStamp& rhs);
 		
 		std::string toStringOnlySecond();
+		
+		std::string toStringMiliSecond();
 
 		std::string toStringMicrioSecond();
 
